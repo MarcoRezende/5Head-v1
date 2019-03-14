@@ -94,7 +94,7 @@ $(function() {
 					</div>`
 		},
 		question1Link: function() {
-			console.log('cor')
+			console.log('-> Cor <-')
 			var body = $('body')
 			var footer = $('footer')
 			var link = `<a class="secret-link" target="_blank"
