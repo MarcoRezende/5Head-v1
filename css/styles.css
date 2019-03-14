@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+* {
+	box-sizing: border-box;
+	transition: .5s;
+	animation: .5s;
+}
+
+body {
+	background-color: #212121;
+	font-family: 'Montserrat', 'Raleway', sans-serif; }
+}
+
+.container {
+	width: 100%;
+	margin: 0 -10px;
+	color: #fff;
+
+}
+a {
+	color: #fff
+}
+a:hover {
+	color: #fff
+}
+a:focus {
+	color: #fff
+}
+.main {
+	color: #fff;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	height: 550px;
+}
+
+footer {
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 10px;
+	color: #fff;
+}
+
+.secret-link {
+	position: absolute;
+	top: -9999px;
+	color: fff;
+}
+
+.secret-link:focus {
+	top: 0;
+	color: fff;
+}
+
+span {
+	padding: 10px 0;
+	display: block;
+	color: #fff;
+}
+
+p {
+	color: #fff;
+}
+
+input {
+	margin: 10px 0;
+}
+
+button {
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
