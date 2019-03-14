@@ -56,7 +56,7 @@ $(function() {
 			}
 
 			if (question.attr('id') == "Q2" ) {
-				if (answer == "É REAL") {
+				if (answer == "É REAL" || answer == "É REAL" || answer == "É real" || answer == "é real") {
 					controller.clearScreen(body)
 					body.append(container)
 					view3.init()
@@ -66,7 +66,7 @@ $(function() {
 			}
 
 			if (question.attr('id') == "Q3") {
-				if (answer == "5Head") {
+				if (answer == "5Head" || answer == "5head") {
 					controller.clearScreen(body)
 					body.append(container)
 					view4.init()
