@@ -2,36 +2,37 @@
 
 * {
 	box-sizing: border-box;
-	transition: .5s;
-	animation: .5s;
 }
 
 body {
 	background-color: #212121;
-	font-family: 'Montserrat', 'Raleway', sans-serif; }
+	font-family: 'Montserrat', 'Raleway', sans-serif;
 }
 
 .container {
+	display: table;
 	width: 100%;
-	margin: 0 -10px;
+	padding: 0 5px;
 	color: #fff;
-
 }
+
 a {
 	color: #fff
 }
+
 a:hover {
 	color: #fff
 }
+
 a:focus {
 	color: #fff
 }
+
 .main {
 	color: #fff;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
-	height: 550px;
 }
 
 footer {
@@ -40,6 +41,12 @@ footer {
 	text-align: center;
 	padding: 10px;
 	color: #fff;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #303030;
 }
 
 .secret-link {
@@ -64,7 +71,7 @@ p {
 }
 
 input {
-	margin: 10px 0;
+	margin: 10px auto;
 }
 
 button {
@@ -84,4 +91,29 @@ button {
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.transition-img {
+	width: 112px;
+	display: table-cell;
+	margin: 0 auto;
+	vertical-align: middle;
+	padding: 20px;
+	opacity: 0;
+	left: calc(50% - 70px);
+	transition: all 0.8s ease;
+	border-radius: 42%;
+	transform: scale(1);
+	position: absolute;
+	top: 20%;
+}
+
+#info, #answer {
+	transition: all 0.3s ease;
+}
+
+@media screen and (min-width: 1920) {
+	.main {
+		height: 2000px;
+	}
 }

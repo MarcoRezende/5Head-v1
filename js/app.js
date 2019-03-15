@@ -1,20 +1,19 @@
 $(function() {
 
+	var body = $('body')
+	compH = $( window ).height();
 	var model = {
 		currentQuestion: null,
 		questions: [
 			{
-				img: '',
-				text: 'QkFDS0dST1VORA==',
-				showTab: function() {
-					setTimeout(function() {
-
-					}, 180000)
-				}
+				img: 'img/beet.jpeg',
+				text: 'ihjrnyvbuk',
+				title: "Lá maior"
 			},
 			{
 				img: 'img/nidere.png',
-				text: 'Ja assistiu Stranger Things?'
+				text: 'Ja assistiu Stranger Things?',
+				title: "nidere"
 			},
 			{
 				src: 'audio/audio.wav',
@@ -32,24 +31,52 @@ $(function() {
 			var question = `<main class="main">
 							<div id="info">
 								<span id="question">${model.questions[num].text}</span>
-								<img src="${model.questions[num].img}">
+								<img id="Qimg" src="${model.questions[num].img}" title="${model.questions[num].title}">
 							</div>
-							<div>
+							<div id="answer">
 								<input id="Q${num+1}" type="text" name="" placeholder="Resposta">
 								<button id="btn" >Enviar</button>
 							</div>
+							<img id="1" class="transition-img" src=img/cellPog.png>
 						</main>`;
 			return question;
 		},
+		shuffle: function shuffle(array) {
+	    let currentIndex = array.length, temporaryValue, randomIndex;
+	    while (currentIndex !== 0) {
+	        randomIndex = Math.floor(Math.random() * currentIndex);
+	        currentIndex -= 1;
+	        temporaryValue = array[currentIndex];
+	        array[currentIndex] = array[randomIndex];
+	        array[randomIndex] = temporaryValue;
+		    };
+		    return array;
+		},
+		transitionPog: function() {
+			$('#answer').css('opacity', '0')
+			$('#info').css('opacity', '0')
+			$('#1').css('opacity', '1').css('transform', 'scale(2)')
+
+			setTimeout(function() {
+				$('#1').css('transform', 'scale(0)')
+			}, 800)
+
+			var container = `<div class="container"></div`;
+
+			body.append(container)
+		},
 		isCorrect: function(answer, num) {
 			var question = $(`#Q${num}`)
-			var body = $('body')
+			body = $('body')
 			var container = '<div class="container"></div>'
 			if (question.attr('id') == "Q1") {
 				if (answer == "#212121") {
-					controller.clearScreen(body)
-					body.append(container)
-					view2.init()
+					controller.transitionPog()
+					setTimeout(function() {
+						controller.clearScreen(body)
+						body.append(container)
+						view2.init()
+					}, 1500)
 				} else {
 						alert('NÃO (talvez a grafia)')
 					}
@@ -57,9 +84,12 @@ $(function() {
 
 			if (question.attr('id') == "Q2" ) {
 				if (answer == "É REAL" || answer == "É REAL" || answer == "É real" || answer == "é real") {
-					controller.clearScreen(body)
-					body.append(container)
-					view3.init()
+					controller.transitionPog()
+					setTimeout(function() {
+						controller.clearScreen(body)
+						body.append(container)
+						view3.init()
+					}, 1500)
 				} else {
 						alert('NÃO (talvez a grafia)')
 					}
@@ -67,9 +97,12 @@ $(function() {
 
 			if (question.attr('id') == "Q3") {
 				if (answer == "5Head" || answer == "5head") {
-					controller.clearScreen(body)
-					body.append(container)
-					view4.init()
+					controller.transitionPog()
+					setTimeout(function() {
+						controller.clearScreen(body)
+						body.append(container)
+						view4.init()
+					}, 1500)
 				} else {
 						alert('NÃO (talvez a grafia)')
 					}
@@ -78,7 +111,7 @@ $(function() {
 		},
 		audioPlayer: function() {
 			var info = $('#info')
-			var img = $('img')
+			var img = $('#Qimg')
 			img.remove()
 			var player = `<audio controls="controls">
 							<source src="${model.questions[2].src}" type="audio/wav">
@@ -88,14 +121,14 @@ $(function() {
 		},
 		getFinal: function() {
 			return `<div class="container">
-						<img src=${model.imgFinal}>
-						<p>Foi mal cara, mas... eu não tenho um sub pra você. Na verdade eu não tenho nem pra mim.
-						Era só pra te motivar. Espero que você tenha gostado :)</p>
+						<img id="pepeEnd" src=${model.imgFinal}>
+						<p>Então né... aquela parte do sub, que talvez tenha te motivado, meio que... era mentira. Eu queria te dar um
+						objetivo, algo pra te incentivar. Não foi por mal. Mas, só pra constar, eu também sou plebe <img src="img/pepeHands.png" width="28" height="28">. Eu espero que você, ao menos, tenha se entretido <img src="img/okayChamp.png" width="28" height="28">.</p>
 					</div>`
 		},
 		question1Link: function() {
 			console.log('-> Cor <-')
-			var body = $('body')
+			body = $('body')
 			var footer = $('footer')
 			var link = `<a class="secret-link" target="_blank"
 					href="https://developers.google.com/web/tools/chrome-devtools/console/?hl=pt-br">Click</a>`
@@ -104,6 +137,9 @@ $(function() {
 				var span = `<span>Tab?</span>`
 				footer.text('Marco Rezende 2019 Tab?')
 			}, 60000)
+		},
+		removeImg: function() {
+			$('#Qimg').remove()
 		},
 		init: function() {
 			view1.init();
