@@ -122,8 +122,7 @@ $(function() {
 		getFinal: function() {
 			return `<div class="container">
 						<img id="pepeEnd" src=${model.imgFinal}>
-						<p>Então né... aquela parte do sub, que talvez tenha te motivado, meio que... era mentira. Eu queria te dar um
-						objetivo, algo pra te incentivar. Não foi por mal. Mas, só pra constar, eu também sou plebe <img src="img/pepeHands.png" width="28" height="28">. Eu espero que você, ao menos, tenha se entretido <img src="img/okayChamp.png" width="28" height="28">.</p>
+						<p>Então né... aquela parte do sub, que talvez tenha te motivado, meio que... era mentira. Erá só pra te incentivar. Não foi por mal. Mas, só pra constar, eu também sou plebe <img src="img/pepeHands.png" width="28" height="28">. Eu espero que você, ao menos, tenha se entretido <img src="img/okayChamp.png" width="28" height="28">.</p>
 					</div>`
 		},
 		question1Link: function() {
